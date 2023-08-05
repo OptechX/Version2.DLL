@@ -25,7 +25,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish -r linux-x64 -c Release /p:PublishSingleFile=true --self-contained
+      run: dotnet publish -r linux-x64 -c Release
 
   release:
     name: "Release"
@@ -44,7 +44,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish -r linux-x64 -c Release /p:PublishSingleFile=true --self-contained
+      run: dotnet publish -r linux-x64 -c Release
     - name: "GH Release"
       run: |
         TAG=${GITHUB_REF#refs/tags/}
